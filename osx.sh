@@ -152,6 +152,8 @@ require_brew wget --enable-iri
 # nvm
 require_nvm stable
 
+
+
 ###############################################################################
 bot "NPM Globals..."
 ###############################################################################
@@ -207,16 +209,16 @@ require_cask box-sync
 require_cask slack
 
 # tools
-#require_cask comicbooklover
+# require_cask comicbooklover
 require_cask diffmerge
-#require_cask flash-player
+# require_cask flash-player
 require_cask gpgtools
-# require_cask ireadfast
+#  require_cask ireadfast
 require_cask iterm2
-#require_cask macvim
+# require_cask macvim
 require_cask sizeup
-#require_cask simple-comic
-#require_cask sketchup
+# require_cask simple-comic
+# require_cask sketchup
 
 require_cask atom
 # require_apm linter
@@ -224,24 +226,24 @@ require_cask atom
 # require_apm atom-beautify
 
 # require_cask the-unarchiver
-#require_cask transmission
-# require_cask vlc
+# require_cask transmission
+require_cask vlc
 require_cask xquartz
 
 # development browsers
-# require_cask breach
 # require_cask firefox
-#require_cask firefox-aurora
 require_cask google-chrome
-# require_cask google-chrome-canary
-# require_cask torbrowser
+
 
 # virtal machines
-# require_cask virtualbox
+require_cask virtualbox
+require_cask packer
 # chef-dk, berkshelf, etc
 #require_cask chefdk
 # vagrant for running dev environments using docker images
 #require_cask vagrant # # | grep Caskroom | sed "s/.*'\(.*\)'.*/open \1\/Vagrant.pkg/g" | sh
+
+require_cask sublime-text3
 
 
 
@@ -249,11 +251,40 @@ require_cask google-chrome
 # Remove outdated versions from the cellar
 # brew cleanup > /dev/null 2>&1
 # bot "All clean"
+###############################################################################
+bot "Sublime Text 3 setup"
+###############################################################################
+git clone https://github.com/Yabatadesign/afterglow-theme/ "Theme - Afterglow" 
+mv Theme\ -\ Afterglow/ /Users/dischord01/Library/Application\ Support/Sublime\ Text\ 3/Packages/
+cat >/Users/dischord01/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings <<-EOF
+{
+    "theme": "Afterglow.sublime-theme",
+    "font": "hack",
+    "color_scheme": "Packages/Theme - Afterglow/Afterglow.tmTheme"
+}
+EOF
+
+
+###############################################################################
+bot "Change Login Shell to Zsh"                                               #
+###############################################################################
+# login -pfq dischord01 /bin/zsh
+chsh -s $(which zsh)
+###############################################################################
+bot "Hack Font "                                                              #
+###############################################################################
+brew cask install caskroom/fonts/font-hack
+
+
+
+
+
+
+
 
 ###############################################################################
 bot "Configuring General System UI/UX..."
 ###############################################################################
-
 
 ###############################################################################
 # SSD-specific tweaks                                                         #
@@ -915,3 +946,8 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "iCal" "Terminal"; do
   killall "${app}" > /dev/null 2>&1
 done
+
+
+
+
+

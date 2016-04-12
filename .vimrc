@@ -7,7 +7,7 @@ if has('gui_running')
 else
     set background=dark
 endif
-colorscheme solarized
+colorscheme luna
 syntax on " syntax highlighting on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

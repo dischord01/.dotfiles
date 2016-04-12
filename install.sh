@@ -5,10 +5,10 @@
 # @author Adam Eivy
 ###########################
 
-DEFAULT_EMAIL="adam.eivy@disney.com"
-DEFAULT_GITHUBUSER="atomantic"
-DEFAULT_NAME="Adam Eivy"
-DEFAULT_USERNAME="antic"
+DEFAULT_EMAIL="stephen.sollar@gmail.com"
+DEFAULT_GITHUBUSER="dischord01"
+DEFAULT_NAME="dischord01"
+DEFAULT_USERNAME="dischord01"
 
 
 # include my library helpers for colorized echo and require_brew, etc
