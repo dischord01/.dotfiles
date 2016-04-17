@@ -238,14 +238,15 @@ require_cask google-chrome
 # virtal machines
 require_cask virtualbox
 require_cask packer
+require_cask vagrant
 # chef-dk, berkshelf, etc
 #require_cask chefdk
 # vagrant for running dev environments using docker images
 #require_cask vagrant # # | grep Caskroom | sed "s/.*'\(.*\)'.*/open \1\/Vagrant.pkg/g" | sh
+require_cask istat-menus
 
 require_cask sublime-text3
-
-
+require_cask one-password
 
 # bot "Alright, cleaning up homebrew cache..."
 # Remove outdated versions from the cellar
@@ -256,6 +257,7 @@ bot "Sublime Text 3 setup"
 ###############################################################################
 git clone https://github.com/Yabatadesign/afterglow-theme/ "Theme - Afterglow" 
 mv Theme\ -\ Afterglow/ /Users/dischord01/Library/Application\ Support/Sublime\ Text\ 3/Packages/
+rm -rf Theme\ -\ Afterglow/
 cat >/Users/dischord01/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings <<-EOF
 {
     "theme": "Afterglow.sublime-theme",
@@ -264,20 +266,15 @@ cat >/Users/dischord01/Library/Application\ Support/Sublime\ Text\ 3/Packages/Us
 }
 EOF
 
-
 ###############################################################################
 bot "Change Login Shell to Zsh"                                               #
 ###############################################################################
-# login -pfq dischord01 /bin/zsh
 chsh -s $(which zsh)
+
 ###############################################################################
-bot "Hack Font "                                                              #
+bot "Hack Font"                                                               #
 ###############################################################################
 brew cask install caskroom/fonts/font-hack
-
-
-
-
 
 
 
